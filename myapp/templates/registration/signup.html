@@ -1,16 +1,25 @@
 <!DOCTYPE html>
+<html lang="pt-br">
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup</title>
+    <title>Cadastro</title>
+
+    <style>
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+
 </head>
 <body>
-    <h2>Signup</h2>
+    <h2>Cadastro</h2>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Signup</button>
+        <button type="submit">Cadastrar</button>
     </form>
-    <p>Already have an account? <a href="{% url 'login' %}">Login here</a>.</p>
+    <p>Já tem uma conta? <a href="{% url 'login' %}">Faça login aqui</a>.</p>
 </body>
 </html>

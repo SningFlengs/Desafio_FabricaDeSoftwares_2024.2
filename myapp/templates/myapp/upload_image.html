@@ -1,17 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Image</title>
+    <title>Enviar Imagem</title>
+
+    <style>
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+
 </head>
 <body>
-    <h1>Upload Image</h1>
+    <h1>Enviar Imagem</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Upload</button>
+        <button type="submit">Enviar</button>
     </form>
-    <a href="{% url 'dashboard' %}">Back to Dashboard</a>
-</body>
-</html>
+    <a href="{% url 'dashboard' %}">Voltar ao Painel</a>
+
+    {% if form.title.errors %}
+        <div class="error">
+            {% for error in form.title.errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if form.image.errors %}
+        <div class="error">
+            {% for error in form.image.errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        </div>
+    {% en

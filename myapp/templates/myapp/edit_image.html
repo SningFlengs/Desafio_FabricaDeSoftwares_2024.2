@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Image</title>
+    <title>Editar Imagem</title>
+
+    <style>
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+
 </head>
 <body>
-    <h1>Edit Image</h1>
+    <h1>Editar Imagem</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Save Changes</button>
+        <button type="submit">Salvar Alterações</button>
     </form>
-    <a href="{% url 'dashboard' %}">Cancel</a>
+    <a href="{% url 'dashboard' %}">Cancelar</a>
 </body>
 </html>
