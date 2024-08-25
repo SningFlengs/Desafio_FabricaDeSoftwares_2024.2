@@ -1,5 +1,12 @@
 # Desafio_Fabrica-2024
 
+##.env
+
+**SECRET_KEY=django-insecure-_67xlyrr=0dis8y^lf3v!v$wgq-cp39vjzmmyse_-qw!c=3y6)
+**CLOUD_NAME=dcaeguryu
+**API_KEY=893779374146126
+**API_SECRET=dUPitevtP2xQCj7DXd-wBxIvBrQ
+
 ## Status
 
 **Em Desenvolvimento** 🛠️
