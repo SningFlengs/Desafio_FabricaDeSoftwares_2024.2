@@ -2,38 +2,34 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enviar Imagem</title>
-
-    <style>
-        .error {
-            color: red;
-            font-weight: bold;
-        }
-    </style>
-
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/upload.css' %}">
 </head>
 <body>
-    <h1>Enviar Imagem</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Enviar</button>
-    </form>
-    <a href="{% url 'dashboard' %}">Voltar ao Painel</a>
+    <div class="bg"></div>
 
-    {% if form.title.errors %}
-        <div class="error">
-            {% for error in form.title.errors %}
-                <p>{{ error }}</p>
-            {% endfor %}
-        </div>
-    {% endif %}
+    <main class="form-upload">
+        <h1 class="h3">Enviar Imagem</h1>
 
-    {% if form.image.errors %}
-    <div class="error">
-        {% for error in form.image.errors %}
-            <p>{{ error }}</p>
-        {% endfor %}
-    </div>
-    {% endif %}
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.title.label_tag }}<br>
+                {{ form.title }}
+            </div>
+            <div class="form-group">
+                {{ form.description.label_tag }}<br>
+                {{ form.description }}
+            </div>
+            <div class="form-group">
+                {{ form.image.label_tag }}<br>
+                {{ form.image }}
+            </div>
+            <button class="btn btn-lg" type="submit">Enviar</button>
+        </form>
+
+        <a href="{% url 'dashboard' %}" class="back-link">Voltar ao Painel</a>
+    </main>
+</body>
+</html>

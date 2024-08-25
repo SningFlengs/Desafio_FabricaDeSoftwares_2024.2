@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<html>
 <head>
-    <title>Painel de Controle</title>
-
-    <style>
-        .error {
-            color: red;
-            font-weight: bold;
-        }
-    </style>
-
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}">
 </head>
 <body>
-    <h1>Suas Imagens</h1>
-    <a href="{% url 'upload_image' %}">Enviar Nova Imagem</a>
-    <br><br>
-    <a href="{% url 'logout' %}">Sair</a>  <!-- Adicionando o link de Logout -->
-    <br><br>
-
-    {% for image in images %}
-        <div>
-            <img src="{{ image.image.url }}" alt="{{ image.title }}">
-            <p>{{ image.title }}</p>
-            <a href="{% url 'edit_image' image.id %}">Editar</a> |
-            <a href="{% url 'delete_image' image.id %}">Excluir</a>
+    <div class="bg"></div>
+    <header>
+        <h1>Dashboard</h1>
+        <nav>
+            <a href="{% url 'upload_image' %}" class="btn">Enviar Imagem</a>
+            <a href="{% url 'logout' %}" class="btn logout">Sair</a>
+        </nav>
+    </header>
+    <main>
+        <div class="portfolio-grid">
+            {% for image in images %}
+            <div class="portfolio-item">
+                <img src="{{ image.image.url }}" alt="{{ image.title }}">
+                <div class="portfolio-info">
+                    <h2>{{ image.title }}</h2>
+                    <p>{{ image.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
         </div>
-    {% endfor %}
+    </main>
 </body>
 </html>
