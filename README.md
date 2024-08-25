@@ -65,7 +65,6 @@ Este projeto foi desenvolvido como parte do desafio _Fábrica de Softwares_. Ele
 
 ## Endpoints Principais
 
-- **Home**: `/myapp/` - Página inicial com todas as imagens.
 - **Dashboard**: `/myapp/dashboard/` - Painel do usuário com suas imagens.
 - **Upload**: `/myapp/upload/` - Página para fazer upload de novas imagens.
 - **Edição**: `/myapp/edit/<id>/` - Página para editar uma imagem existente.
@@ -77,6 +76,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## Contato
 
-**Ícaro Oliveira**
-- GitHub: [@seu-usuario](https://github.com/seu-usuario)
-- LinkedIn: [@seu-usuario](https://www.linkedin.com/in/seu-usuario/)
+**Ítalo Oliveira**
+- GitHub: [@Italo_Oliveira](https://github.com/SningFlengs)
+- LinkedIn: [@Italo_Oliveira](https://www.linkedin.com/in/ítalo-cauã-58b12030b/)
+- Email: italocaua19506@gmail.com
